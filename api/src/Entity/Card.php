@@ -21,6 +21,9 @@ class Card
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isPossed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +49,18 @@ class Card
     public function setName(string $name): static
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function isIsPossed(): ?bool
+    {
+        return $this->isPossed;
+    }
+
+    public function setIsPossed(?bool $isPossed): static
+    {
+        $this->isPossed = $isPossed;
 
         return $this;
     }
