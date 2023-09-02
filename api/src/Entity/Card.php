@@ -24,6 +24,15 @@ class Card
     #[ORM\Column(nullable: true)]
     private ?bool $isPossed = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $rarity = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $quantity = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $set = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +70,42 @@ class Card
     public function setIsPossed(?bool $isPossed): static
     {
         $this->isPossed = $isPossed;
+
+        return $this;
+    }
+
+    public function getRarity(): ?string
+    {
+        return $this->rarity;
+    }
+
+    public function setRarity(?string $rarity): static
+    {
+        $this->rarity = $rarity;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity(?int $quantity): static
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getSet(): ?string
+    {
+        return $this->set;
+    }
+
+    public function setSet(?string $set): static
+    {
+        $this->set = $set;
 
         return $this;
     }
