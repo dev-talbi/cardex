@@ -33,6 +33,18 @@ class Card
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $set = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isHolo = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $isReverseHolo = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $avg1Price = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $pictureUrl = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -106,6 +118,54 @@ class Card
     public function setSet(?string $set): static
     {
         $this->set = $set;
+
+        return $this;
+    }
+
+    public function isIsHolo(): ?bool
+    {
+        return $this->isHolo;
+    }
+
+    public function setIsHolo(?bool $isHolo): static
+    {
+        $this->isHolo = $isHolo;
+
+        return $this;
+    }
+
+    public function isIsReverseHolo(): ?bool
+    {
+        return $this->isReverseHolo;
+    }
+
+    public function setIsReverseHolo(?bool $isReverseHolo): static
+    {
+        $this->isReverseHolo = $isReverseHolo;
+
+        return $this;
+    }
+
+    public function getAvg1Price(): ?float
+    {
+        return $this->avg1Price;
+    }
+
+    public function setAvg1Price(?float $avg1Price): static
+    {
+        $this->avg1Price = $avg1Price;
+
+        return $this;
+    }
+
+    public function getPictureUrl(): ?string
+    {
+        return $this->pictureUrl;
+    }
+
+    public function setPictureUrl(?string $pictureUrl): static
+    {
+        $this->pictureUrl = $pictureUrl;
 
         return $this;
     }
