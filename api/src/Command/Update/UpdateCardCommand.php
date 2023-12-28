@@ -43,6 +43,7 @@ class UpdateCardCommand extends Command
                 if ($card->isIsHolo() === false || $card->isIsHolo() === null) {
                     $card->setAvg1Price($response->toArray()['data']['cardmarket']['prices']['avg1']);
                 }
+                $card->setCardMarketUrl($response->toArray()['data']['cardmarket']['url']);
 
 //                $this->logger->warning("Processed card with TCG ID: {$card->getTcgId()}");
 

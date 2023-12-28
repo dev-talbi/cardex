@@ -45,6 +45,9 @@ class Card
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $pictureUrl = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cardMarketUrl = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -166,6 +169,18 @@ class Card
     public function setPictureUrl(?string $pictureUrl): static
     {
         $this->pictureUrl = $pictureUrl;
+
+        return $this;
+    }
+
+    public function getCardMarketUrl(): ?string
+    {
+        return $this->cardMarketUrl;
+    }
+
+    public function setCardMarketUrl(?string $cardMarketUrl): static
+    {
+        $this->cardMarketUrl = $cardMarketUrl;
 
         return $this;
     }
